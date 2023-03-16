@@ -1,4 +1,6 @@
 import './globals.css'
+import SideNav from './SideNav'
+import TopNav from './TopNav'
 
 export const metadata = {
   title: 'Create Next App',
@@ -12,7 +14,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className='bg-zinc-900 text-white'>
+        <div className='border-2 border-green-500 h-screen flex flex-col'>
+          <TopNav />
+          <div className=' flex border-2 border-blue-500 flex-1'>
+           <SideNav />
+             {children}
+          </div> 
+        </div>
+        </body>
     </html>
   )
 }
